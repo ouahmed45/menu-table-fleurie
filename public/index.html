@@ -442,6 +442,120 @@
       font-weight: 400;
     }
 
+    /* Hero meta links */
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .badge-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(201, 160, 99, 0.08);
+      border: 1px solid var(--line-gold);
+      color: var(--gold-light);
+      font-size: 11.5px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all .2s ease;
+    }
+    .badge-link:hover {
+      background: rgba(201, 160, 99, 0.16);
+      border-color: var(--gold);
+    }
+    .badge-link .stars {
+      color: #f5b842;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    /* Reviews section */
+    .reviews-card {
+      margin: 36px 0 0;
+      padding: 28px 22px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(201, 160, 99, 0.12) 0%, rgba(19, 17, 13, 0.85) 40%, rgba(13, 11, 8, 0.95) 100%);
+      border: 1px solid var(--line-gold);
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+      position: relative;
+    }
+    .reviews-stars {
+      color: #f5b842;
+      font-size: 22px;
+      letter-spacing: 5px;
+      margin-bottom: 8px;
+    }
+    .reviews-title {
+      font-family: var(--display);
+      font-size: 20px;
+      font-style: italic;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+    [dir="rtl"] .reviews-title {
+      font-style: normal;
+    }
+    .reviews-sub {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 480px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+    }
+    .reviews-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 999px;
+      background: var(--gold-grad);
+      color: #0d0b08;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(201, 160, 99, 0.35);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn-gold:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(201, 160, 99, 0.5);
+    }
+    .btn-gold:active {
+      transform: scale(0.98);
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--line-gold);
+      background: rgba(201, 160, 99, 0.05);
+      color: var(--gold-light);
+      font-weight: 500;
+      font-size: 13px;
+      text-decoration: none;
+      transition: all .2s ease;
+    }
+    .btn-outline:hover {
+      background: rgba(201, 160, 99, 0.15);
+      border-color: var(--gold);
+    }
+
     /* Footer */
     footer {
       padding: 50px 0 20px;
@@ -485,6 +599,18 @@
     <div>
       <div class="notice" id="notice"></div>
     </div>
+    <div class="hero-meta">
+      <a id="hero-reviews-link" href="#" target="_blank" rel="noopener noreferrer" class="badge-link">
+        <span class="stars">★★★★★</span>
+        <span id="hero-reviews-text">Avis Google</span>
+        <span style="opacity:0.6;font-size:10px">↗</span>
+      </a>
+      <a id="hero-maps-link" href="#" target="_blank" rel="noopener noreferrer" class="badge-link">
+        <span>📍</span>
+        <span id="hero-maps-text">Didouche Mourad</span>
+        <span style="opacity:0.6;font-size:10px">↗</span>
+      </a>
+    </div>
   </div>
 
   <!-- Search -->
@@ -505,11 +631,31 @@
   <!-- Sweet Promo -->
   <div class="promo" id="promo"></div>
 
+  <!-- Reviews & Location -->
+  <section class="reviews-card" id="reviews-card">
+    <div class="reviews-stars">★★★★★</div>
+    <h3 class="reviews-title" id="reviews-title"></h3>
+    <p class="reviews-sub" id="reviews-sub"></p>
+    <div class="reviews-actions">
+      <a id="reviews-cta-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-gold">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span id="reviews-btn-label"></span>
+      </a>
+      <a id="reviews-maps-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-outline">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span id="reviews-maps-label"></span>
+      </a>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer id="foot"></footer>
 </div>
 
 <script>
+const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=table+fleurie+restaurant+didouche&oq=table+&gs_lcrp=EgZjaHJvbWUqBggBECMYJzIGCAAQRRg5MgYIARAjGCcyBggCECMYJzIGCAMQRRg8MgYIBBBFGEEyBggFEEUYPTIGCAYQRRhBMgYIBxBFGEHSAQgyODUwajBqN6gCALACAA&sourceid=chrome&source=chrome.ob&ie=UTF-8#sv=CCYSwwIKEgoDdGJzEgtscmY6ITNzSUFFPQomCgFxEiF0YWJsZSBmbGV1cmllIHJlc3RhdXJhbnQgZGlkb3VjaGUKBwoDdWRtEgAQARoQcHYtL2cvMTF2cWh2MnI3NSo5Cg0vZy8xMXZxaHYycjc1Ih4KGHRhYmxlIGZsZXVyaWUgcmVzdGF1cmFudBACGAOJASl-WeDQ0LiGMqwBCiF0YWJsZSBmbGV1cmllIHJlc3RhdXJhbnQgZGlkb3VjaGVI5bmF_dm6gIAIWi8QABABEAIYABgBGAIiIXRhYmxlIGZsZXVyaWUgcmVzdGF1cmFudCBkaWRvdWNoZZoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQyMTBhV1JIY0RWTlZYQldZMnMxU0UxWVJrNVNSWFIzVDFoR01GTkhZeEFC-gEECF0QSRgKIOPyuaMG';
+const GOOGLE_MAPS_URL = 'https://maps.google.com/?q=La+Table+Fleurie+Restaurant+Didouche+Mourad+Alger';
+
 const L = {
   fr: {
     dir: 'ltr',
@@ -523,7 +669,13 @@ const L = {
     glp: '300 DA la boule',
     go: 'Gourmandises & Pâtisseries',
     gop: '500 DA la pièce',
-    foot: 'La Table Fleurie',
+    reviewsBadge: 'Avis Google',
+    mapsBadge: 'Didouche Mourad, Alger',
+    reviewsTitle: 'Votre avis compte pour nous',
+    reviewsSub: 'Vous passez un agréable moment ? Partagez vos impressions et aidez d\'autres gourmets à découvrir La Table Fleurie sur Google.',
+    reviewsBtn: '⭐ Laisser un avis sur Google',
+    reviewsMaps: '📍 Nous trouver sur Google Maps',
+    foot: 'La Table Fleurie · Didouche Mourad, Alger',
     cats: {
       entrees_chaudes: 'Entrées chaudes',
       salades: 'Salades & Entrées',
@@ -547,7 +699,13 @@ const L = {
     glp: '300 DA per scoop',
     go: 'Gourmet Pastries',
     gop: '500 DA each',
-    foot: 'La Table Fleurie',
+    reviewsBadge: 'Google Reviews',
+    mapsBadge: 'Didouche Mourad, Algiers',
+    reviewsTitle: 'Your feedback matters to us',
+    reviewsSub: 'Enjoying your culinary moment? Share your experience and leave a review for La Table Fleurie on Google.',
+    reviewsBtn: '⭐ Leave a Google Review',
+    reviewsMaps: '📍 Find us on Google Maps',
+    foot: 'La Table Fleurie · Didouche Mourad, Algiers',
     cats: {
       entrees_chaudes: 'Hot Starters',
       salades: 'Salads & Starters',
@@ -571,7 +729,13 @@ const L = {
     glp: '300 د.ج للكرة',
     go: 'حلويات فاخرة',
     gop: '500 د.ج للقطعة',
-    foot: 'La Table Fleurie',
+    reviewsBadge: 'آراء الزبائن على جوجل',
+    mapsBadge: 'ديدوش مراد، الجزائر',
+    reviewsTitle: 'رأيكم يهمنا ويسعدنا دائماً',
+    reviewsSub: 'هل نالت أطباقنا وخدمتنا إعجابكم؟ شاركونا تجربتكم وتقييمكم لمطعم لا تابل فلوري على جوجل.',
+    reviewsBtn: '⭐ شاركنا تقييمك على جوجل',
+    reviewsMaps: '📍 موقعنا على خرائط جوجل',
+    foot: 'مطعم ومقهى لا تابل فلوري · ديدوش مراد، الجزائر',
     cats: {
       entrees_chaudes: 'مقبلات ساخنة',
       salades: 'سلطات ومقبلات',
@@ -622,6 +786,20 @@ function render() {
   $('notice').textContent = X.notice;
   $('q').placeholder = X.search;
   $('foot').textContent = X.foot;
+
+  // Hero badges
+  $('hero-reviews-link').href = GOOGLE_REVIEWS_URL;
+  $('hero-maps-link').href = GOOGLE_MAPS_URL;
+  $('hero-reviews-text').textContent = X.reviewsBadge;
+  $('hero-maps-text').textContent = X.mapsBadge;
+
+  // Reviews Card
+  $('reviews-title').textContent = X.reviewsTitle;
+  $('reviews-sub').textContent = X.reviewsSub;
+  $('reviews-cta-btn').href = GOOGLE_REVIEWS_URL;
+  $('reviews-maps-btn').href = GOOGLE_MAPS_URL;
+  $('reviews-btn-label').textContent = X.reviewsBtn;
+  $('reviews-maps-label').textContent = X.reviewsMaps;
 
   // Promo
   $('promo').innerHTML = `
