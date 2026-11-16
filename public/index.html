@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>La Table Fleurie – Menu Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap">
+  <style>
+    :root {
+      --bg: #090807;
+      --bg-card: #13110d;
+      --surface: #17140f;
+      --line: #2a241b;
+      --line-gold: rgba(201, 160, 99, 0.22);
+      --fg: #f5eedf;
+      --muted: #9c8e76;
+      --gold: #c9a063;
+      --gold-light: #e8d0a3;
+      --gold-dark: #8c6a38;
+      --gold-grad: linear-gradient(135deg, #f5e3bf 0%, #c9a063 50%, #9e753b 100%);
+      --display: 'Lora', Georgia, 'Times New Roman', serif;
+      --ui: 'Poppins', system-ui, -apple-system, sans-serif;
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(ellipse 80% 40% at 50% -10%, rgba(201, 160, 99, 0.12), transparent 70%),
+        radial-gradient(circle at 100% 50%, rgba(201, 160, 99, 0.04), transparent 40%);
+      color: var(--fg);
+      font-family: var(--ui);
+      font-size: 15px;
+      line-height: 1.5;
+      padding-left: max(16px, env(safe-area-inset-left, 0px));
+      padding-right: max(16px, env(safe-area-inset-right, 0px));
+      padding-bottom: 50px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap { max-width: 780px; margin: 0 auto; }
+    button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+    /* Top bar */
+    header.top {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(9, 8, 7, 0.85);
+      border-bottom: 1px solid var(--line);
+      margin: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+      padding: 12px max(16px, env(safe-area-inset-left, 0px));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .langs { display: flex; gap: 6px; }
+    .langs button {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      color: var(--muted);
+      transition: all .2s ease;
+    }
+    .langs button[aria-pressed="true"] {
+      border-color: var(--gold);
+      background: rgba(201, 160, 99, 0.15);
+      color: var(--gold-light);
+    }
+
+    .tabletag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      color: var(--gold-light);
+      background: rgba(201, 160, 99, 0.08);
+      border: 1px solid var(--line-gold);
+      border-radius: 999px;
+      padding: 4px 14px;
+    }
+    .tabletag::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold);
+    }
+
+    /* Hero section */
+    .hero {
+      padding: 38px 12px 24px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-ornament {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: .35em;
+      opacity: .8;
+      margin-bottom: 6px;
+    }
+    .hero .eyebrow {
+      font-size: 11px;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .hero h1 {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(36px, 10vw, 56px);
+      line-height: 1.1;
+      margin: 10px 0 14px;
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-wrap: balance;
+    }
+    .hero .rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 0 auto 14px;
+      width: 140px;
+    }
+    .hero .rule::before, .hero .rule::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+    .hero .rule::after {
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    .hero .rule span {
+      color: var(--gold);
+      font-size: 8px;
+    }
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13.5px;
+      letter-spacing: .02em;
+    }
+
+    .notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(201, 160, 99, 0.08);
+      border: 1px solid rgba(201, 160, 99, 0.28);
+      font-size: 12.5px;
+      color: var(--gold-light);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Search bar */
+    .search {
+      position: relative;
+      margin: 18px 0 20px;
+    }
+    .search svg {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: var(--gold);
+      pointer-events: none;
+    }
+    [dir="rtl"] .search svg {
+      left: auto;
+      right: 18px;
+    }
+    .search input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--fg);
+      padding: 13px 18px 13px 46px;
+      font: inherit;
+      font-size: 13.5px;
+      transition: all .25s ease;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+    }
+    [dir="rtl"] .search input {
+      padding: 13px 46px 13px 18px;
+    }
+    .search input:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 160, 99, 0.18), inset 0 2px 4px rgba(0,0,0,0.4);
+    }
+    .search input::placeholder { color: var(--muted); }
+
+    /* Sticky category rail */
+    nav.cats {
+      position: sticky;
+      top: 51px;
+      z-index: 30;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(9, 8, 7, 0.88);
+      margin: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+      padding: 10px max(16px, env(safe-area-inset-left, 0px));
+      border-bottom: 1px solid var(--line);
+      overflow-x: auto;
+      display: flex;
+      gap: 8px;
+      scrollbar-width: none;
+    }
+    nav.cats::-webkit-scrollbar { display: none; }
+    nav.cats button {
+      flex: none;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+      transition: all .2s ease;
+      background: var(--surface);
+    }
+    nav.cats button.on {
+      background: var(--gold-grad);
+      border-color: var(--gold);
+      color: #0d0b08;
+      font-weight: 600;
+      box-shadow: 0 2px 10px rgba(201, 160, 99, 0.35);
+    }
+
+    /* Category section */
+    section.cat {
+      padding-top: 36px;
+      scroll-margin-top: 110px;
+    }
+    section.cat > h2 {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    section.cat > h2::before {
+      content: "◆";
+      font-size: 9px;
+      color: var(--gold-light);
+    }
+    section.cat > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--line-gold), transparent);
+    }
+    [dir="rtl"] section.cat > h2::after {
+      background: linear-gradient(270deg, var(--line-gold), transparent);
+    }
+
+    /* Grid of dishes */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 620px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+    }
+
+    /* Dish card */
+    .dish {
+      background: var(--bg-card);
+      border: 1px solid var(--line-gold);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    @media (hover: hover) {
+      .dish:hover {
+        transform: translateY(-3px);
+        border-color: rgba(201, 160, 99, 0.45);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    .dish-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: #181510;
+      overflow: hidden;
+    }
+    .dish-img-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+    @media (hover: hover) {
+      .dish:hover .dish-img-wrap img {
+        transform: scale(1.04);
+      }
+    }
+    .dish-img-wrap::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 40%;
+      background: linear-gradient(to top, var(--bg-card), transparent);
+      pointer-events: none;
+    }
+
+    .dish-info {
+      padding: 14px 16px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-top: -4px;
+      position: relative;
+      z-index: 2;
+    }
+    .dish h3 {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 1.25;
+      color: #faf5eb;
+      margin: 0;
+      min-width: 0;
+      text-wrap: balance;
+    }
+    [dir="rtl"] .dish h3 {
+      font-style: normal;
+    }
+
+    .price-tag {
+      flex: none;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    [dir="rtl"] .price-tag {
+      text-align: left;
+    }
+    .price-tag .num {
+      font-family: var(--ui);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: .02em;
+    }
+    .price-tag .unit {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gold);
+      margin-left: 3px;
+      letter-spacing: .04em;
+    }
+    [dir="rtl"] .price-tag .unit {
+      margin-left: 0;
+      margin-right: 3px;
+    }
+
+    .empty {
+      padding: 60px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Promo section */
+    .promo {
+      margin: 44px 0 0;
+      padding: 22px 24px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(201, 160, 99, 0.08) 0%, rgba(20, 18, 14, 0.7) 100%);
+      border: 1px solid var(--line-gold);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .promo-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .promo-title {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 19px;
+      color: var(--gold-light);
+    }
+    [dir="rtl"] .promo-title {
+      font-style: normal;
+    }
+    .promo-price {
+      font-size: 13.5px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    /* Footer */
+    footer {
+      padding: 50px 0 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 11.5px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      position: relative;
+    }
+    footer::before {
+      content: "❦";
+      display: block;
+      color: var(--gold);
+      font-size: 14px;
+      margin-bottom: 12px;
+      opacity: .7;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .dish, .dish-img-wrap img { transition: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap" id="app">
+  <!-- Top bar -->
+  <header class="top">
+    <div class="langs" id="langs"></div>
+    <span class="tabletag" id="tabletag" hidden></span>
+  </header>
+
+  <!-- Hero header -->
+  <div class="hero">
+    <div class="hero-ornament">✦ ✦ ✦</div>
+    <div class="eyebrow" id="eyebrow"></div>
+    <h1>La Table Fleurie</h1>
+    <div class="rule"><span>◆</span></div>
+    <p id="tagline"></p>
+    <div>
+      <div class="notice" id="notice"></div>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="search">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <input id="q" type="search" autocomplete="off" spellcheck="false">
+  </div>
+
+  <!-- Category Nav -->
+  <nav class="cats" id="cats"></nav>
+
+  <!-- Menu Content -->
+  <main id="menu"></main>
+
+  <!-- Sweet Promo -->
+  <div class="promo" id="promo"></div>
+
+  <!-- Footer -->
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const L = {
+  fr: {
+    dir: 'ltr',
+    eyebrow: 'Restaurant & Café',
+    tag: 'Découvrez notre carte gourmande',
+    notice: '🛎️ Votre serveur viendra prendre votre commande à table',
+    search: 'Rechercher un plat gourmand…',
+    none: 'Aucun plat ne correspond à votre recherche.',
+    cur: 'DA',
+    gl: 'Glaces artisanales',
+    glp: '300 DA la boule',
+    go: 'Gourmandises & Pâtisseries',
+    gop: '500 DA la pièce',
+    foot: 'La Table Fleurie',
+    cats: {
+      entrees_chaudes: 'Entrées chaudes',
+      salades: 'Salades & Entrées',
+      pates: 'Pâtes fraîches',
+      viandes_blanches: 'Viandes blanches',
+      viandes_rouges: 'Viandes rouges',
+      poissons: 'Poissons & Mer',
+      burgers: 'Burgers gourmet',
+      pizzas: 'Pizzas artisanales'
+    }
+  },
+  en: {
+    dir: 'ltr',
+    eyebrow: 'Restaurant & Café',
+    tag: 'Discover our culinary creations',
+    notice: '🛎️ Your waiter will take your order at your table',
+    search: 'Search a dish…',
+    none: 'No dishes match your search.',
+    cur: 'DA',
+    gl: 'Artisanal Ice Creams',
+    glp: '300 DA per scoop',
+    go: 'Gourmet Pastries',
+    gop: '500 DA each',
+    foot: 'La Table Fleurie',
+    cats: {
+      entrees_chaudes: 'Hot Starters',
+      salades: 'Salads & Starters',
+      pates: 'Fresh Pasta',
+      viandes_blanches: 'White Meats',
+      viandes_rouges: 'Red Meats',
+      poissons: 'Fish & Seafood',
+      burgers: 'Gourmet Burgers',
+      pizzas: 'Artisanal Pizzas'
+    }
+  },
+  ar: {
+    dir: 'rtl',
+    eyebrow: 'مطعم ومقهى',
+    tag: 'اكتشفوا تشكيلتنا الفاخرة',
+    notice: '🛎️ سيتولى النادل الحضور إلى طاولتكم لتسجيل طلبكم',
+    search: 'ابحث عن طبق…',
+    none: 'لا توجد أطباق مطابقة للبحث.',
+    cur: 'د.ج',
+    gl: 'مثلجات تقليدية',
+    glp: '300 د.ج للكرة',
+    go: 'حلويات فاخرة',
+    gop: '500 د.ج للقطعة',
+    foot: 'La Table Fleurie',
+    cats: {
+      entrees_chaudes: 'مقبلات ساخنة',
+      salades: 'سلطات ومقبلات',
+      pates: 'معجنات طازجة',
+      viandes_blanches: 'لحوم بيضاء',
+      viandes_rouges: 'لحوم حمراء',
+      poissons: 'أسماك ومأكولات بحرية',
+      burgers: 'برغر فاخر',
+      pizzas: 'بيتزا إيطالية'
+    }
+  }
+};
+
+let DATA = [], lang = 'fr', query = '', table = '';
+const params = new URLSearchParams(location.search);
+try {
+  const s = localStorage.getItem('ltf-lang');
+  if (L[s]) lang = s;
+  table = localStorage.getItem('ltf-table') || '';
+} catch (e) {}
+
+if (params.get('t')) {
+  table = params.get('t').replace(/[^0-9A-Za-z]/g, '').slice(0, 6);
+  try { localStorage.setItem('ltf-table', table); } catch (e) {}
+}
+
+const $ = id => document.getElementById(id);
+const T = () => L[lang];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+function render() {
+  const X = T();
+  document.documentElement.lang = lang;
+  document.documentElement.dir = X.dir;
+
+  // Langues
+  $('langs').innerHTML = ['fr', 'ar', 'en'].map(l => 
+    `<button aria-pressed="${l === lang}" data-l="${l}">${l === 'ar' ? 'عربي' : l.toUpperCase()}</button>`
+  ).join('');
+
+  // Table tag
+  const tt = $('tabletag');
+  tt.hidden = !table;
+  tt.textContent = (lang === 'ar' ? 'طاولة ' : lang === 'en' ? 'Table ' : 'Table ') + table;
+
+  $('eyebrow').textContent = X.eyebrow;
+  $('tagline').textContent = X.tag;
+  $('notice').textContent = X.notice;
+  $('q').placeholder = X.search;
+  $('foot').textContent = X.foot;
+
+  // Promo
+  $('promo').innerHTML = `
+    <div class="promo-item">
+      <span class="promo-title">${esc(X.gl)}</span>
+      <span class="promo-price">${esc(X.glp)}</span>
+    </div>
+    <div style="width:1px;height:36px;background:var(--line-gold);opacity:.5"></div>
+    <div class="promo-item">
+      <span class="promo-title">${esc(X.go)}</span>
+      <span class="promo-price">${esc(X.gop)}</span>
+    </div>
+  `;
+
+  // Menu Categories & Dishes
+  const qy = query.trim().toLowerCase();
+  let h = '', nv = '', any = false;
+
+  DATA.forEach(c => {
+    const its = c.items.filter(d => !qy || d.n.toLowerCase().includes(qy));
+    if (!its.length) return;
+    any = true;
+
+    nv += `<button data-c="${c.c}">${esc(X.cats[c.c] || c.c)}</button>`;
+
+    h += `<section class="cat" id="c-${c.c}">
+      <h2>${esc(X.cats[c.c] || c.c)}</h2>
+      <div class="grid">` + 
+      its.map((d, i) => `
+        <article class="dish">
+          <div class="dish-img-wrap">
+            <img src="${d.img}" alt="${esc(d.n)}" ${i > 2 ? 'loading="lazy"' : ''}>
+          </div>
+          <div class="dish-info">
+            <h3>${esc(d.n)}</h3>
+            <div class="price-tag">
+              <span class="num">${d.p.toLocaleString('fr-FR')}</span>
+              <span class="unit">${X.cur}</span>
+            </div>
+          </div>
+        </article>
+      `).join('') + 
+      `</div></section>`;
+  });
+
+  $('menu').innerHTML = any ? h : `<div class="empty">${X.none}</div>`;
+  $('cats').innerHTML = nv;
+  spy();
+}
+
+document.addEventListener('input', e => {
+  if (e.target.id === 'q') {
+    query = e.target.value;
+    render();
+  }
+});
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  const d = b.dataset;
+  if (d.l) {
+    lang = d.l;
+    try { localStorage.setItem('ltf-lang', lang); } catch (_) {}
+    render();
+  } else if (d.c) {
+    const el = $('c-' + d.c);
+    if (el) {
+      el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth' });
+    }
+  }
+});
+
+function spy() {
+  const s = [...document.querySelectorAll('section.cat')];
+  if (!s.length) return;
+  let current = s[0];
+  s.forEach(sec => {
+    if (sec.getBoundingClientRect().top < 160) current = sec;
+  });
+  document.querySelectorAll('nav.cats button').forEach(btn => {
+    btn.classList.toggle('on', 'c-' + btn.dataset.c === current.id);
+  });
+  const on = document.querySelector('nav.cats button.on');
+  if (on) {
+    const nav = $('cats');
+    nav.scrollTo({ left: on.offsetLeft - nav.clientWidth / 2 + on.clientWidth / 2, behavior: 'smooth' });
+  }
+}
+
+let scheduled = false;
+addEventListener('scroll', () => {
+  if (!scheduled) {
+    scheduled = true;
+    requestAnimationFrame(() => { scheduled = false; spy(); });
+  }
+}, { passive: true });
+
+fetch('/api/menu')
+  .then(r => r.json())
+  .then(m => {
+    DATA = m;
+    render();
+  });
+
+render();
+</script>
+</body>
+</html>
