@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>La Table Fleurie – Pâtisserie & Cafétéria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap">
+  <style>
+    :root {
+      --bg: #090807;
+      --bg-card: #13110d;
+      --surface: #17140f;
+      --line: #2a241b;
+      --line-gold: rgba(201, 160, 99, 0.22);
+      --fg: #f5eedf;
+      --muted: #9c8e76;
+      --gold: #c9a063;
+      --gold-light: #e8d0a3;
+      --gold-dark: #8c6a38;
+      --gold-grad: linear-gradient(135deg, #f5e3bf 0%, #c9a063 50%, #9e753b 100%);
+      --display: 'Lora', Georgia, 'Times New Roman', serif;
+      --ui: 'Poppins', system-ui, -apple-system, sans-serif;
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(ellipse 80% 40% at 50% -10%, rgba(201, 160, 99, 0.12), transparent 70%),
+        radial-gradient(circle at 100% 50%, rgba(201, 160, 99, 0.04), transparent 40%);
+      color: var(--fg);
+      font-family: var(--ui);
+      font-size: 15px;
+      line-height: 1.5;
+      padding-left: max(16px, env(safe-area-inset-left, 0px));
+      padding-right: max(16px, env(safe-area-inset-right, 0px));
+      padding-bottom: 50px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap { max-width: 780px; margin: 0 auto; }
+    button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+    /* Top bar */
+    header.top {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(9, 8, 7, 0.85);
+      border-bottom: 1px solid var(--line);
+      margin: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+      padding: 12px max(16px, env(safe-area-inset-left, 0px));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .langs { display: flex; gap: 6px; }
+    .langs button {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      color: var(--muted);
+      transition: all .2s ease;
+    }
+    .langs button[aria-pressed="true"] {
+      border-color: var(--gold);
+      background: rgba(201, 160, 99, 0.15);
+      color: var(--gold-light);
+    }
+
+    .tabletag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      color: var(--gold-light);
+      background: rgba(201, 160, 99, 0.08);
+      border: 1px solid var(--line-gold);
+      border-radius: 999px;
+      padding: 4px 14px;
+    }
+    .tabletag::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold);
+    }
+
+    /* Hero section */
+    .hero {
+      padding: 38px 12px 24px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-ornament {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: .35em;
+      opacity: .8;
+      margin-bottom: 6px;
+    }
+    .hero .eyebrow {
+      font-size: 11px;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .hero h1 {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(34px, 9vw, 52px);
+      line-height: 1.1;
+      margin: 10px 0 14px;
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-wrap: balance;
+    }
+    .hero .rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 0 auto 14px;
+      width: 140px;
+    }
+    .hero .rule::before, .hero .rule::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+    .hero .rule::after {
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    .hero .rule span {
+      color: var(--gold);
+      font-size: 8px;
+    }
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13.5px;
+      letter-spacing: .02em;
+    }
+
+    .notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(201, 160, 99, 0.08);
+      border: 1px solid rgba(201, 160, 99, 0.28);
+      font-size: 12.5px;
+      color: var(--gold-light);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .badge-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(201, 160, 99, 0.08);
+      border: 1px solid var(--line-gold);
+      color: var(--gold-light);
+      font-size: 11.5px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all .2s ease;
+    }
+    .badge-link:hover {
+      background: rgba(201, 160, 99, 0.16);
+      border-color: var(--gold);
+    }
+    .badge-link .stars {
+      color: #f5b842;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    /* Search bar */
+    .search {
+      position: relative;
+      margin: 18px 0 20px;
+    }
+    .search svg {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: var(--gold);
+      pointer-events: none;
+    }
+    [dir="rtl"] .search svg {
+      left: auto;
+      right: 18px;
+    }
+    .search input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--fg);
+      padding: 13px 18px 13px 46px;
+      font: inherit;
+      font-size: 13.5px;
+      transition: all .25s ease;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+    }
+    [dir="rtl"] .search input {
+      padding: 13px 46px 13px 18px;
+    }
+    .search input:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 160, 99, 0.18), inset 0 2px 4px rgba(0,0,0,0.4);
+    }
+    .search input::placeholder { color: var(--muted); }
+
+    /* Sticky category rail */
+    nav.cats {
+      position: sticky;
+      top: 51px;
+      z-index: 30;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(9, 8, 7, 0.88);
+      margin: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+      padding: 10px max(16px, env(safe-area-inset-left, 0px));
+      border-bottom: 1px solid var(--line);
+      overflow-x: auto;
+      display: flex;
+      gap: 8px;
+      scrollbar-width: none;
+    }
+    nav.cats::-webkit-scrollbar { display: none; }
+    nav.cats button {
+      flex: none;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+      transition: all .2s ease;
+      background: var(--surface);
+    }
+    nav.cats button.on {
+      background: var(--gold-grad);
+      border-color: var(--gold);
+      color: #0d0b08;
+      font-weight: 600;
+      box-shadow: 0 2px 10px rgba(201, 160, 99, 0.35);
+    }
+
+    /* Category section */
+    section.cat {
+      padding-top: 36px;
+      scroll-margin-top: 110px;
+    }
+    section.cat > h2 {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    section.cat > h2::before {
+      content: "◆";
+      font-size: 9px;
+      color: var(--gold-light);
+    }
+    section.cat > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--line-gold), transparent);
+    }
+    [dir="rtl"] section.cat > h2::after {
+      background: linear-gradient(270deg, var(--line-gold), transparent);
+    }
+
+    /* Grid of dishes */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 620px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+    }
+
+    /* Dish card */
+    .dish {
+      background: var(--bg-card);
+      border: 1px solid var(--line-gold);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .dish.no-img {
+      background: linear-gradient(135deg, rgba(201, 160, 99, 0.06) 0%, rgba(19, 17, 13, 0.95) 100%);
+      border: 1px solid var(--line-gold);
+    }
+    .dish.no-img .dish-info {
+      padding: 20px 22px;
+      min-height: 85px;
+    }
+    .dish.no-img h3 {
+      font-size: 19px;
+    }
+    @media (hover: hover) {
+      .dish:hover {
+        transform: translateY(-3px);
+        border-color: rgba(201, 160, 99, 0.45);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    .dish-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: #181510;
+      overflow: hidden;
+    }
+    .dish-img-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+    @media (hover: hover) {
+      .dish:hover .dish-img-wrap img {
+        transform: scale(1.04);
+      }
+    }
+    .dish-img-wrap::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 40%;
+      background: linear-gradient(to top, var(--bg-card), transparent);
+      pointer-events: none;
+    }
+
+    .dish-info {
+      padding: 14px 16px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: -4px;
+      position: relative;
+      z-index: 2;
+    }
+    .dish-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .dish h3 {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.25;
+      color: #faf5eb;
+      margin: 0;
+      text-wrap: balance;
+    }
+    [dir="rtl"] .dish h3 {
+      font-style: normal;
+    }
+    .dish-desc {
+      margin-top: 5px;
+      font-size: 12px;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.4;
+    }
+    [dir="rtl"] .dish-desc {
+      font-style: normal;
+    }
+
+    .price-tag {
+      flex: none;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+      background: rgba(201, 160, 99, 0.12);
+      border: 1px solid var(--line-gold);
+      padding: 5px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .price-tag .num {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--gold-light);
+    }
+    .price-tag .unit {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .05em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .empty {
+      padding: 60px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Reviews section */
+    .reviews-card {
+      margin: 36px 0 0;
+      padding: 28px 22px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(201, 160, 99, 0.12) 0%, rgba(19, 17, 13, 0.85) 40%, rgba(13, 11, 8, 0.95) 100%);
+      border: 1px solid var(--line-gold);
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+      position: relative;
+    }
+    .reviews-stars {
+      color: #f5b842;
+      font-size: 22px;
+      letter-spacing: 5px;
+      margin-bottom: 8px;
+    }
+    .reviews-title {
+      font-family: var(--display);
+      font-size: 20px;
+      font-style: italic;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+    [dir="rtl"] .reviews-title {
+      font-style: normal;
+    }
+    .reviews-sub {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 480px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+    }
+    .reviews-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 999px;
+      background: var(--gold-grad);
+      color: #0d0b08;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(201, 160, 99, 0.35);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn-gold:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(201, 160, 99, 0.5);
+    }
+    .btn-gold:active {
+      transform: scale(0.98);
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--line-gold);
+      background: rgba(201, 160, 99, 0.05);
+      color: var(--gold-light);
+      font-weight: 500;
+      font-size: 13px;
+      text-decoration: none;
+      transition: all .2s ease;
+    }
+    .btn-outline:hover {
+      background: rgba(201, 160, 99, 0.15);
+      border-color: var(--gold);
+    }
+
+    /* Footer */
+    footer {
+      padding: 50px 0 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 11.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      position: relative;
+      line-height: 1.8;
+    }
+    footer::before {
+      content: "❦";
+      display: block;
+      color: var(--gold);
+      font-size: 14px;
+      margin-bottom: 12px;
+      opacity: .7;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .dish, .dish-img-wrap img { transition: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap" id="app">
+  <!-- Top bar -->
+  <header class="top">
+    <div class="langs" id="langs"></div>
+    <span class="tabletag" id="tabletag" hidden></span>
+  </header>
+
+  <!-- Hero header -->
+  <div class="hero">
+    <div class="hero-ornament">✦ ✦ ✦</div>
+    <div class="eyebrow" id="eyebrow"></div>
+    <h1>La Table Fleurie</h1>
+    <div class="rule"><span>◆</span></div>
+    <p id="tagline"></p>
+    <div>
+      <div class="notice" id="notice"></div>
+    </div>
+    <div class="hero-meta">
+      <a id="hero-reviews-link" href="#" target="_blank" rel="noopener noreferrer" class="badge-link">
+        <span class="stars">★★★★★</span>
+        <span id="hero-reviews-text">Avis Google</span>
+        <span style="opacity:0.6;font-size:10px">↗</span>
+      </a>
+      <a id="hero-maps-link" href="#" target="_blank" rel="noopener noreferrer" class="badge-link">
+        <span>📍</span>
+        <span id="hero-maps-text">56, Rue Didouche Mourad</span>
+        <span style="opacity:0.6;font-size:10px">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="search">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <input id="q" type="search" autocomplete="off" spellcheck="false">
+  </div>
+
+  <!-- Category Nav -->
+  <nav class="cats" id="cats"></nav>
+
+  <!-- Menu Content -->
+  <main id="menu"></main>
+
+  <!-- Reviews & Location -->
+  <section class="reviews-card" id="reviews-card">
+    <div class="reviews-stars">★★★★★</div>
+    <h3 class="reviews-title" id="reviews-title"></h3>
+    <p class="reviews-sub" id="reviews-sub"></p>
+    <div class="reviews-actions">
+      <a id="reviews-cta-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-gold">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span id="reviews-btn-label"></span>
+      </a>
+      <a id="reviews-maps-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-outline">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span id="reviews-maps-label"></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=table+fleurie+restaurant+didouche&oq=table+&gs_lcrp=EgZjaHJvbWUqBggBECMYJzIGCAAQRRg5MgYIARAjGCcyBggCECMYJzIGCAMQRRg8MgYIBBBFGEEyBggFEEUYPTIGCAYQRRhBMgYIBxBFGEHSAQgyODUwajBqN6gCALACAA&sourceid=chrome&source=chrome.ob&ie=UTF-8#sv=CCYSwwIKEgoDdGJzEgtscmY6ITNzSUFFPQomCgFxEiF0YWJsZSBmbGV1cmllIHJlc3RhdXJhbnQgZGlkb3VjaGUKBwoDdWRtEgAQARoQcHYtL2cvMTF2cWh2MnI3NSo5Cg0vZy8xMXZxaHYycjc1Ih4KGHRhYmxlIGZsZXVyaWUgcmVzdGF1cmFudBACGAOJASl-WeDQ0LiGMqwBCiF0YWJsZSBmbGV1cmllIHJlc3RhdXJhbnQgZGlkb3VjaGVI5bmF_dm6gIAIWi8QABABEAIYABgBGAIiIXRhYmxlIGZsZXVyaWUgcmVzdGF1cmFudCBkaWRvdWNoZZoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQyMTBhV1JIY0RWTlZYQldZMnMxU0UxWVJrNVNSWFIzVDFoR01GTkhZeEFC-gEECF0QSRgKIOPyuaMG';
+const GOOGLE_MAPS_URL = 'https://maps.google.com/?q=La+Table+Fleurie+Restaurant+Didouche+Mourad+Alger';
+
+const L = {
+  fr: {
+    dir: 'ltr',
+    eyebrow: 'Pâtisserie & Salon de Thé',
+    tag: 'Pâtisseries d\'exception, Cafés Richard & Douceurs artisanales',
+    notice: '🛎️ Votre serveur viendra prendre votre commande à table',
+    search: 'Rechercher une pâtisserie, un café, un cocktail…',
+    none: 'Aucun article ne correspond à votre recherche.',
+    cur: 'DZD',
+    reviewsBadge: 'Avis Google',
+    mapsBadge: '56, Rue Didouche Mourad',
+    reviewsTitle: 'Votre avis compte pour nous',
+    reviewsSub: 'Vous passez un agréable moment ? Partagez vos impressions et aidez d\'autres gourmets à découvrir La Table Fleurie sur Google.',
+    reviewsBtn: '⭐ Laisser un avis sur Google',
+    reviewsMaps: '📍 Nous trouver sur Google Maps',
+    foot: 'Pâtisserie La Table Fleurie · 56, Rue Didouche Mourad, Alger\nTél : +213 (0) 540 77 28 74',
+    cats: {
+      boissons_chaudes: 'Boissons Chaudes',
+      boissons_fraiches: 'Boissons Fraîches',
+      cocktails: 'Cocktails Frais',
+      milkshakes: 'Milkshakes & Glacés',
+      patisseries: 'Pâtisseries Fines',
+      viennoiseries: 'Viennoiseries',
+      gateaux_secs: 'Gâteaux Secs',
+      crepes: 'Crêpes'
+    }
+  },
+  en: {
+    dir: 'ltr',
+    eyebrow: 'Pastry & Tea Room',
+    tag: 'Artisanal Pastries, Cafés Richard & Gourmet Drinks',
+    notice: '🛎️ Your waiter will take your order at your table',
+    search: 'Search a pastry, coffee, cocktail…',
+    none: 'No items match your search.',
+    cur: 'DZD',
+    reviewsBadge: 'Google Reviews',
+    mapsBadge: '56 Didouche Mourad St',
+    reviewsTitle: 'Your feedback matters to us',
+    reviewsSub: 'Enjoying your time with us? Share your experience and leave a review for La Table Fleurie on Google.',
+    reviewsBtn: '⭐ Leave a Google Review',
+    reviewsMaps: '📍 Find us on Google Maps',
+    foot: 'Pâtisserie La Table Fleurie · 56 Didouche Mourad St, Algiers\nTel: +213 (0) 540 77 28 74',
+    cats: {
+      boissons_chaudes: 'Hot Drinks',
+      boissons_fraiches: 'Cold Drinks',
+      cocktails: 'Cocktails',
+      milkshakes: 'Milkshakes',
+      patisseries: 'Pastries',
+      viennoiseries: 'Viennoiseries',
+      gateaux_secs: 'Biscuits',
+      crepes: 'Crêpes'
+    }
+  },
+  ar: {
+    dir: 'rtl',
+    eyebrow: 'محل حلويات ومقهى راقي',
+    tag: 'حلويات فاخرة، قهوة ريتشارد ومشروبات مميزة',
+    notice: '🛎️ سيتولى النادل الحضور إلى طاولتكم لتسجيل طلبكم',
+    search: 'ابحث عن حلوى، قهوة، كوكتيل…',
+    none: 'لا توجد عناصر مطابقة للبحث.',
+    cur: 'د.ج',
+    reviewsBadge: 'آراء الزبائن على جوجل',
+    mapsBadge: '56 شارع ديدوش مراد',
+    reviewsTitle: 'رأيكم يهمنا ويسعدنا دائماً',
+    reviewsSub: 'هل نالت حلوياتنا وقهوتنا إعجابكم؟ شاركونا تجربتكم وتقييمكم لمطعم ومقهى لا تابل فلوري على جوجل.',
+    reviewsBtn: '⭐ شاركنا تقييمك على جوجل',
+    reviewsMaps: '📍 موقعنا على خرائط جوجل',
+    foot: 'محل حلويات لا تابل فلوري · 56 شارع ديدوش مراد، الجزائر\nهاتف: +213 (0) 540 77 28 74',
+    cats: {
+      boissons_chaudes: 'مشروبات ساخنة',
+      boissons_fraiches: 'مشروبات باردة',
+      cocktails: 'كوكتيلات',
+      milkshakes: 'ميلك شيك',
+      patisseries: 'حلويات',
+      viennoiseries: 'فطائر وكرواسون',
+      gateaux_secs: 'حلويات جافة',
+      crepes: 'كريب'
+    }
+  }
+};
+
+let DATA = [], lang = 'fr', query = '', table = '';
+const params = new URLSearchParams(location.search);
+try {
+  const s = localStorage.getItem('ltf-cafe-lang');
+  if (L[s]) lang = s;
+  table = localStorage.getItem('ltf-cafe-table') || '';
+} catch (e) {}
+
+if (params.get('t')) {
+  table = params.get('t').replace(/[^0-9A-Za-z]/g, '').slice(0, 6);
+  try { localStorage.setItem('ltf-cafe-table', table); } catch (e) {}
+}
+
+const $ = id => document.getElementById(id);
+const T = () => L[lang];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+function render() {
+  const X = T();
+  document.documentElement.lang = lang;
+  document.documentElement.dir = X.dir;
+
+  // Langues
+  $('langs').innerHTML = ['fr', 'ar', 'en'].map(l => 
+    `<button aria-pressed="${l === lang}" data-l="${l}">${l === 'ar' ? 'عربي' : l.toUpperCase()}</button>`
+  ).join('');
+
+  // Table tag
+  const tt = $('tabletag');
+  tt.hidden = !table;
+  tt.textContent = (lang === 'ar' ? 'طاولة ' : lang === 'en' ? 'Table ' : 'Table ') + table;
+
+  $('eyebrow').textContent = X.eyebrow;
+  $('tagline').textContent = X.tag;
+  $('notice').textContent = X.notice;
+  $('q').placeholder = X.search;
+  $('foot').innerText = X.foot;
+
+  // Hero badges
+  $('hero-reviews-link').href = GOOGLE_REVIEWS_URL;
+  $('hero-maps-link').href = GOOGLE_MAPS_URL;
+  $('hero-reviews-text').textContent = X.reviewsBadge;
+  $('hero-maps-text').textContent = X.mapsBadge;
+
+  // Reviews Card
+  $('reviews-title').textContent = X.reviewsTitle;
+  $('reviews-sub').textContent = X.reviewsSub;
+  $('reviews-cta-btn').href = GOOGLE_REVIEWS_URL;
+  $('reviews-maps-btn').href = GOOGLE_MAPS_URL;
+  $('reviews-btn-label').textContent = X.reviewsBtn;
+  $('reviews-maps-label').textContent = X.reviewsMaps;
+
+  // Menu Categories & Dishes
+  const qy = query.trim().toLowerCase();
+  let h = '', nv = '', any = false;
+
+  DATA.forEach(c => {
+    const its = c.items.filter(d => !qy || d.n.toLowerCase().includes(qy) || (d.desc && d.desc.toLowerCase().includes(qy)));
+    if (!its.length) return;
+    any = true;
+
+    nv += `<button data-c="${c.c}">${esc(X.cats[c.c] || c.c)}</button>`;
+
+    h += `<section class="cat" id="c-${c.c}">
+      <h2>${esc(X.cats[c.c] || c.c)}</h2>
+      <div class="grid">` + 
+      its.map((d, i) => `
+        <article class="dish ${d.img ? '' : 'no-img'}">
+          ${d.img ? `
+            <div class="dish-img-wrap">
+              <img src="${d.img}?v=5" alt="${esc(d.n)}" ${i > 2 ? 'loading="lazy"' : ''}>
+            </div>
+          ` : ''}
+          <div class="dish-info">
+            <div class="dish-text">
+              <h3>${esc(d.n)}</h3>
+              ${d.desc ? `<p class="dish-desc">${esc(d.desc)}</p>` : ''}
+            </div>
+            <div class="price-tag">
+              <span class="num">${d.p.toLocaleString('fr-FR')}</span>
+              <span class="unit">${X.cur}</span>
+            </div>
+          </div>
+        </article>
+      `).join('') + 
+      `</div></section>`;
+  });
+
+  $('menu').innerHTML = any ? h : `<div class="empty">${X.none}</div>`;
+  $('cats').innerHTML = nv;
+  spy();
+}
+
+document.addEventListener('input', e => {
+  if (e.target.id === 'q') {
+    query = e.target.value;
+    render();
+  }
+});
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  const d = b.dataset;
+  if (d.l) {
+    lang = d.l;
+    try { localStorage.setItem('ltf-cafe-lang', lang); } catch (_) {}
+    render();
+  } else if (d.c) {
+    const el = $('c-' + d.c);
+    if (el) {
+      el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth' });
+    }
+  }
+});
+
+function spy() {
+  const s = [...document.querySelectorAll('section.cat')];
+  if (!s.length) return;
+  let current = s[0];
+  s.forEach(sec => {
+    if (sec.getBoundingClientRect().top < 160) current = sec;
+  });
+  document.querySelectorAll('nav.cats button').forEach(btn => {
+    btn.classList.toggle('on', 'c-' + btn.dataset.c === current.id);
+  });
+  const on = document.querySelector('nav.cats button.on');
+  if (on) {
+    const nav = $('cats');
+    nav.scrollTo({ left: on.offsetLeft - nav.clientWidth / 2 + on.clientWidth / 2, behavior: 'smooth' });
+  }
+}
+
+let scheduled = false;
+addEventListener('scroll', () => {
+  if (!scheduled) {
+    scheduled = true;
+    requestAnimationFrame(() => { scheduled = false; spy(); });
+  }
+}, { passive: true });
+
+fetch('/api/menu-cafe')
+  .then(r => r.json())
+  .then(m => {
+    DATA = m;
+    render();
+  });
+
+render();
+</script>
+</body>
+</html>

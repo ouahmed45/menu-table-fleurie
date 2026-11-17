@@ -2,6 +2,10 @@
   "cleanUrls": true,
   "rewrites": [
     {
+      "source": "/cafeteria",
+      "destination": "/cafeteria.html"
+    },
+    {
       "source": "/",
       "destination": "/index.html"
     }

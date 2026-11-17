@@ -1,8 +1,9 @@
-// La Table Fleurie – Menu Digital par QR Code
+// La Table Fleurie – Menu Digital par QR Code (Restaurant & Cafétéria)
 const http = require('http'), fs = require('fs'), path = require('path');
 
 const PORT = process.env.PORT || 3000;
 const MENU = JSON.parse(fs.readFileSync(path.join(__dirname, 'menu.json'), 'utf8'));
+const MENU_CAFE = JSON.parse(fs.readFileSync(path.join(__dirname, 'menu_cafe.json'), 'utf8'));
 const MIME = {
   '.html': 'text/html; charset=utf-8',
   '.jpg': 'image/jpeg',
@@ -16,14 +17,20 @@ const MIME = {
 http.createServer((req, res) => {
   const url = new URL(req.url, 'http://x'), p = url.pathname;
 
-  // API Menu
+  // API Menu Restaurant
   if (p === '/api/menu') {
     res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=60' });
     return res.end(JSON.stringify(MENU));
   }
 
+  // API Menu Cafétéria
+  if (p === '/api/menu-cafe') {
+    res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=60' });
+    return res.end(JSON.stringify(MENU_CAFE));
+  }
+
   // Fichiers statiques (pages, photos, icônes)
-  let f = p === '/' ? '/index.html' : p;
+  let f = p === '/' ? '/index.html' : p === '/cafeteria' ? '/cafeteria.html' : p;
   f = path.normalize(path.join(__dirname, 'public', f));
   if (!f.startsWith(path.join(__dirname, 'public'))) {
     res.writeHead(403);

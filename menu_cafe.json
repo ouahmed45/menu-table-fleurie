@@ -1,0 +1,427 @@
+[
+  {
+    "c": "boissons_chaudes",
+    "items": [
+      {
+        "id": "cafe_presse",
+        "n": "Café Presse Richard",
+        "p": 300,
+        "desc": "Cafés Richard",
+        "img": null
+      },
+      {
+        "id": "cafe_capsule",
+        "n": "Café Capsule Richard",
+        "p": 350,
+        "desc": "Cafés Richard",
+        "img": null
+      },
+      {
+        "id": "double_espresso",
+        "n": "Double Espresso",
+        "p": 500,
+        "desc": "Cafés Richard",
+        "img": null
+      },
+      {
+        "id": "cafe_au_lait",
+        "n": "Café au Lait",
+        "p": 400,
+        "desc": "Cafés Richard",
+        "img": null
+      },
+      {
+        "id": "lait_chocolat",
+        "n": "Lait au Chocolat",
+        "p": 250,
+        "desc": "",
+        "img": null
+      },
+      {
+        "id": "lait_chaud",
+        "n": "Lait Chaud (Candia)",
+        "p": 150,
+        "desc": "",
+        "img": null
+      },
+      {
+        "id": "the_infusion",
+        "n": "Thé Infusion Richard",
+        "p": 250,
+        "desc": "Cafés Richard",
+        "img": null
+      },
+      {
+        "id": "tisane",
+        "n": "Tisane",
+        "p": 250,
+        "desc": "",
+        "img": null
+      },
+      {
+        "id": "italian_coffee",
+        "n": "Italian Coffee",
+        "p": 400,
+        "desc": "Espresso Richard, Chantilly",
+        "img": null
+      },
+      {
+        "id": "mocha_coffee",
+        "n": "Mocha Coffee",
+        "p": 400,
+        "desc": "Espresso Richard, Chocolat/Lait",
+        "img": null
+      },
+      {
+        "id": "cappuccino",
+        "n": "Cappuccino",
+        "p": 400,
+        "desc": "Espresso Richard, Lait, Cacao ou Cannelle",
+        "img": null
+      },
+      {
+        "id": "chocolat_chaud",
+        "n": "Chocolat Chaud",
+        "p": 400,
+        "desc": "",
+        "img": null
+      }
+    ]
+  },
+  {
+    "c": "boissons_fraiches",
+    "items": [
+      {
+        "id": "eau_pm",
+        "n": "Eau Minérale (PM)",
+        "p": 50,
+        "desc": "",
+        "img": null
+      },
+      {
+        "id": "eau_gm",
+        "n": "Eau Minérale (GM)",
+        "p": 150,
+        "desc": "",
+        "img": null
+      },
+      {
+        "id": "eau_petillante",
+        "n": "Eau Pétillante (PM)",
+        "p": 100,
+        "desc": "",
+        "img": null
+      },
+      {
+        "id": "the_glace",
+        "n": "Thé Glacé",
+        "p": 400,
+        "desc": "",
+        "img": "/img/cafe/the_glace.jpg"
+      },
+      {
+        "id": "soda_jus",
+        "n": "Soda / Jus",
+        "p": 200,
+        "desc": "",
+        "img": "/img/cafe/soda_jus.jpg"
+      },
+      {
+        "id": "jus_presse",
+        "n": "Jus Pressé (Orange - Citron)",
+        "p": 400,
+        "desc": "",
+        "img": "/img/cafe/jus_presse.jpg"
+      },
+      {
+        "id": "ice_latte",
+        "n": "Ice Latte",
+        "p": 450,
+        "desc": "",
+        "img": null
+      },
+      {
+        "id": "ice_coffee",
+        "n": "Ice Coffee",
+        "p": 350,
+        "desc": "",
+        "img": null
+      }
+    ]
+  },
+  {
+    "c": "cocktails",
+    "items": [
+      {
+        "id": "le_delice",
+        "n": "Le Délice",
+        "p": 600,
+        "desc": "Fraise, Banane, Orange, Citron",
+        "img": "/img/cafe/le_delice.jpg"
+      },
+      {
+        "id": "velours_vert",
+        "n": "Velour Vert",
+        "p": 600,
+        "desc": "Avocat, Pomme, Poire",
+        "img": "/img/cafe/velours_vert.jpg"
+      },
+      {
+        "id": "vaccin_automne",
+        "n": "Vaccin d’Automne",
+        "p": 600,
+        "desc": "Grenade, Citron, Orange",
+        "img": "/img/cafe/vaccin_automne.jpg"
+      },
+      {
+        "id": "la_vie_en_rose",
+        "n": "La Vie en Rose",
+        "p": 600,
+        "desc": "Fraise, Pomme, Citron",
+        "img": "/img/cafe/la_vie_en_rose.jpg"
+      },
+      {
+        "id": "parfum_femmes",
+        "n": "Parfum de Femmes",
+        "p": 600,
+        "desc": "Orange, Sucre de Canne, Citron",
+        "img": "/img/cafe/parfum_femmes.jpg"
+      },
+      {
+        "id": "mojito",
+        "n": "Mojito",
+        "p": 600,
+        "desc": "Soda/Eau Pétillante, Menthe, Citron",
+        "img": "/img/cafe/mojito.jpg"
+      }
+    ]
+  },
+  {
+    "c": "milkshakes",
+    "items": [
+      {
+        "id": "ms_banane",
+        "n": "Milkshake Banane",
+        "p": 600,
+        "desc": "Lait, Banane",
+        "img": "/img/cafe/ms_banane.jpg"
+      },
+      {
+        "id": "ms_fraise",
+        "n": "Milkshake Fraise",
+        "p": 600,
+        "desc": "Lait, Fraise",
+        "img": "/img/cafe/ms_fraise.jpg"
+      },
+      {
+        "id": "ms_nutella",
+        "n": "Milkshake Nutella",
+        "p": 600,
+        "desc": "Lait, Nutella",
+        "img": "/img/cafe/ms_nutella.jpg"
+      },
+      {
+        "id": "cappuccino_glace",
+        "n": "Cappuccino Glacé",
+        "p": 400,
+        "desc": "Lait, Café",
+        "img": "/img/cafe/cappuccino_glace.jpg"
+      },
+      {
+        "id": "frappuccino",
+        "n": "Frappuccino",
+        "p": 400,
+        "desc": "Mousse de Lait, Café Richard, Sirop de Noisette",
+        "img": "/img/cafe/frappuccino.jpg"
+      }
+    ]
+  },
+  {
+    "c": "patisseries",
+    "items": [
+      {
+        "id": "millefeuille",
+        "n": "Millefeuille",
+        "p": 500,
+        "desc": "Classique, Praliné",
+        "img": "/img/cafe/millefeuille.jpg"
+      },
+      {
+        "id": "fraisier",
+        "n": "Fraisier",
+        "p": 500,
+        "desc": "",
+        "img": "/img/cafe/fraisier.jpg"
+      },
+      {
+        "id": "eclair",
+        "n": "Eclair",
+        "p": 500,
+        "desc": "Caramel, chocolat/noisette, vanille, chocolat",
+        "img": "/img/cafe/eclair.jpg"
+      },
+      {
+        "id": "paris_brest",
+        "n": "Paris-Brest",
+        "p": 500,
+        "desc": "",
+        "img": "/img/cafe/paris_brest.jpg"
+      },
+      {
+        "id": "noisetine",
+        "n": "Noisetine",
+        "p": 500,
+        "desc": "",
+        "img": "/img/cafe/noisetine.jpg"
+      },
+      {
+        "id": "fondant_chocolat",
+        "n": "Fondant au Chocolat",
+        "p": 500,
+        "desc": "Servi avec une Boule de Glace",
+        "img": "/img/cafe/fondant_chocolat.jpg"
+      },
+      {
+        "id": "tiramisu",
+        "n": "Tiramisù",
+        "p": 500,
+        "desc": "",
+        "img": "/img/cafe/tiramisu.jpg"
+      },
+      {
+        "id": "jardinier",
+        "n": "Jardinier",
+        "p": 500,
+        "desc": "",
+        "img": "/img/cafe/jardinier.jpg"
+      },
+      {
+        "id": "tartelette",
+        "n": "Tartelette",
+        "p": 500,
+        "desc": "Fraises, tatin, citron, chocolat",
+        "img": "/img/cafe/tartelette.jpg"
+      },
+      {
+        "id": "creme_brulee",
+        "n": "Crème Brûlée",
+        "p": 500,
+        "desc": "",
+        "img": "/img/cafe/creme_brulee.jpg"
+      }
+    ]
+  },
+  {
+    "c": "viennoiseries",
+    "items": [
+      {
+        "id": "croissant_beurre",
+        "n": "Croissant au Beurre",
+        "p": 200,
+        "desc": "",
+        "img": "/img/cafe/croissant_beurre.jpg"
+      },
+      {
+        "id": "pain_chocolat",
+        "n": "Pain Chocolat au Beurre",
+        "p": 200,
+        "desc": "",
+        "img": "/img/cafe/pain_chocolat.jpg"
+      },
+      {
+        "id": "pain_raisins",
+        "n": "Pain aux Raisins",
+        "p": 200,
+        "desc": "",
+        "img": "/img/cafe/pain_raisins.jpg"
+      },
+      {
+        "id": "brioche_chocolat",
+        "n": "Brioche au Chocolat",
+        "p": 200,
+        "desc": "",
+        "img": "/img/cafe/brioche_chocolat.jpg"
+      },
+      {
+        "id": "pain_suisse",
+        "n": "Pain Suisse",
+        "p": 200,
+        "desc": "",
+        "img": "/img/cafe/pain_suisse.jpg"
+      },
+      {
+        "id": "oranais",
+        "n": "Oranais",
+        "p": 200,
+        "desc": "",
+        "img": "/img/cafe/oranais.jpg"
+      },
+      {
+        "id": "brioche_nature",
+        "n": "Brioche Nature",
+        "p": 200,
+        "desc": "",
+        "img": "/img/cafe/brioche_nature.jpg"
+      }
+    ]
+  },
+  {
+    "c": "gateaux_secs",
+    "items": [
+      {
+        "id": "brownie",
+        "n": "Brownie",
+        "p": 200,
+        "desc": "",
+        "img": "/img/cafe/brownie.jpg"
+      },
+      {
+        "id": "financier",
+        "n": "Financier (2 Pcs)",
+        "p": 200,
+        "desc": "",
+        "img": "/img/cafe/financier.jpg"
+      },
+      {
+        "id": "mini_cake",
+        "n": "Mini Cake",
+        "p": 200,
+        "desc": "",
+        "img": "/img/cafe/mini_cake.jpg"
+      },
+      {
+        "id": "cookies",
+        "n": "Cookies",
+        "p": 200,
+        "desc": "Classic - chocolat",
+        "img": "/img/cafe/cookies.jpg"
+      }
+    ]
+  },
+  {
+    "c": "crepes",
+    "items": [
+      {
+        "id": "crepe_passion",
+        "n": "Chocolat Passion",
+        "p": 500,
+        "desc": "Nutella, Chantilly",
+        "img": "/img/cafe/crepe_passion.jpg"
+      },
+      {
+        "id": "crepe_banana_split",
+        "n": "Banana Split",
+        "p": 600,
+        "desc": "Nutella, Banane, Chantilly",
+        "img": "/img/cafe/crepe_banana_split.jpg"
+      },
+      {
+        "id": "crepe_fantaisie",
+        "n": "Fantaisie de Fruits",
+        "p": 700,
+        "desc": "Nutella, Fruits de Saison, Chantilly",
+        "img": "/img/cafe/crepe_fantaisie.jpg"
+      }
+    ]
+  }
+]
