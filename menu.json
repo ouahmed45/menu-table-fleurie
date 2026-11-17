@@ -1,246 +1,320 @@
 [
- {
-  "c": "entrees_chaudes",
-  "items": [
-   {
-    "id": "soupe_poisson",
-    "n": "Soupe de poisson",
-    "p": 900,
-    "img": "/img/soupe_poisson.jpg"
-   },
-   {
-    "id": "soupe_oignon",
-    "n": "Soupe à l'oignon",
-    "p": 800,
-    "img": "/img/soupe_oignon.jpg"
-   },
-   {
-    "id": "soupe_legumes",
-    "n": "Soupe de Légumes",
-    "p": 700,
-    "img": "/img/soupe_legumes.jpg"
-   }
-  ]
- },
- {
-  "c": "salades",
-  "items": [
-   {
-    "id": "salade_tf",
-    "n": "Salade Table Fleurie",
-    "p": 1600,
-    "img": "/img/salade_tf.jpg"
-   },
-   {
-    "id": "salade_cesar",
-    "n": "Salade César",
-    "p": 900,
-    "img": "/img/salade_cesar.jpg"
-   },
-   {
-    "id": "nicoise",
-    "n": "Salade Niçoise",
-    "p": 900,
-    "img": "/img/nicoise.jpg"
-   },
-   {
-    "id": "fraicheur",
-    "n": "Salade fraîcheur",
-    "p": 1200,
-    "img": "/img/fraicheur.jpg"
-   }
-  ]
- },
- {
-  "c": "pates",
-  "items": [
-   {
-    "id": "pt_spag",
-    "n": "Spaghettis aux Boulettes",
-    "p": 1600,
-    "img": "/img/pt_spag.jpg"
-   },
-   {
-    "id": "pt_tag",
-    "n": "Tagliatelles au Poulet",
-    "p": 1400,
-    "img": "/img/pt_tag.jpg"
-   },
-   {
-    "id": "pt_penne",
-    "n": "Penne all'arrabbiata",
-    "p": 1200,
-    "img": "/img/pt_penne.jpg"
-   }
-  ]
- },
- {
-  "c": "viandes_blanches",
-  "items": [
-   {
-    "id": "cuisse",
-    "n": "Cuisse de poulet grillée",
-    "p": 1400,
-    "img": "/img/cuisse.jpg"
-   },
-   {
-    "id": "parmageina",
-    "n": "Poulet Parmigiana",
-    "p": 1600,
-    "img": "/img/parmageina.jpg"
-   },
-   {
-    "id": "supreme_grille",
-    "n": "Suprême de poulet grillé",
-    "p": 1200,
-    "img": "/img/supreme_grille.jpg"
-   },
-   {
-    "id": "supreme_creme",
-    "n": "Suprême de poulet à la crème",
-    "p": 1400,
-    "img": "/img/supreme_creme.jpg"
-   }
-  ]
- },
- {
-  "c": "viandes_rouges",
-  "items": [
-   {
-    "id": "entrecote",
-    "n": "Entrecôte",
-    "p": 2700,
-    "img": "/img/entrecote.jpg"
-   },
-   {
-    "id": "steack",
-    "n": "Steak haché à cheval",
-    "p": 1700,
-    "img": "/img/steack.jpg"
-   },
-   {
-    "id": "filet",
-    "n": "Filet de boeuf",
-    "p": 2900,
-    "img": "/img/filet.jpg"
-   },
-   {
-    "id": "brochettes",
-    "n": "Brochettes Mix",
-    "p": 2000,
-    "img": "/img/brochettes.jpg"
-   }
-  ]
- },
- {
-  "c": "poissons",
-  "items": [
-   {
-    "id": "crevettes",
-    "n": "Crevettes royales",
-    "p": 2800,
-    "img": "/img/crevettes.jpg"
-   },
-   {
-    "id": "paella",
-    "n": "Paella aux fruits de mer",
-    "p": 3000,
-    "img": "/img/paella.jpg"
-   },
-   {
-    "id": "dorade",
-    "n": "Dorade",
-    "p": 1700,
-    "img": "/img/dorade.jpg"
-   },
-   {
-    "id": "loup",
-    "n": "Loup de mer",
-    "p": 1700,
-    "img": "/img/loup.jpg"
-   },
-   {
-    "id": "espadon",
-    "n": "Espadon",
-    "p": 2700,
-    "img": "/img/espadon.jpg"
-   }
-  ]
- },
- {
-  "c": "burgers",
-  "items": [
-   {
-    "id": "chicken_burger",
-    "n": "Chicken Burger",
-    "p": 1000,
-    "img": "/img/chicken_burger.jpg"
-   },
-   {
-    "id": "fish_burger",
-    "n": "Fish Burger",
-    "p": 1500,
-    "img": "/img/fish_burger.jpg"
-   },
-   {
-    "id": "cheese_burger",
-    "n": "Cheese Burger",
-    "p": 1200,
-    "img": "/img/cheese_burger.jpg"
-   }
-  ]
- },
- {
-  "c": "pizzas",
-  "items": [
-   {
-    "id": "pz_crevettes",
-    "n": "Pizza aux Crevettes",
-    "p": 1200,
-    "img": "/img/pz_crevettes.jpg"
-   },
-   {
-    "id": "pz_poulet",
-    "n": "Pizza Mania",
-    "p": 900,
-    "img": "/img/pz_poulet.jpg"
-   },
-   {
-    "id": "pz_saucisse",
-    "n": "Pizza Campione",
-    "p": 900,
-    "img": "/img/pz_saucisse.jpg"
-   },
-   {
-    "id": "pz_thon",
-    "n": "Pizza Tonna e Cipolla",
-    "p": 900,
-    "img": "/img/pz_thon.jpg"
-   },
-   {
-    "id": "pz_anchois",
-    "n": "Pizza Napolitana",
-    "p": 900,
-    "img": "/img/pz_anchois.jpg"
-   },
-   {
-    "id": "pz_vege",
-    "n": "Pizza Végétarienne",
-    "p": 900,
-    "img": "/img/pz_vege.jpg"
-   },
-   {
-    "id": "pz_mozza",
-    "n": "Pizza Margarita",
-    "p": 800,
-    "img": "/img/pz_mozza.jpg"
-   },
-   {
-    "id": "pz_quattro",
-    "n": "Pizza Quattro Formaggi",
-    "p": 1100,
-    "img": "/img/pz_quattro.jpg"
-   }
-  ]
- }
+  {
+    "c": "entrees_chaudes",
+    "items": [
+      {
+        "id": "soupe_poisson",
+        "n": "Soupe de poisson",
+        "p": 900,
+        "img": "/img/soupe_poisson.jpg"
+      },
+      {
+        "id": "soupe_oignon",
+        "n": "Soupe à l'oignon",
+        "p": 800,
+        "img": "/img/soupe_oignon.jpg"
+      },
+      {
+        "id": "soupe_legumes",
+        "n": "Soupe de Légumes",
+        "p": 700,
+        "img": "/img/soupe_legumes.jpg"
+      }
+    ]
+  },
+  {
+    "c": "salades",
+    "items": [
+      {
+        "id": "salade_tf",
+        "n": "Salade Table Fleurie",
+        "p": 1600,
+        "img": "/img/salade_tf.jpg"
+      },
+      {
+        "id": "salade_cesar",
+        "n": "Salade César",
+        "p": 900,
+        "img": "/img/salade_cesar.jpg"
+      },
+      {
+        "id": "nicoise",
+        "n": "Salade Niçoise",
+        "p": 900,
+        "img": "/img/nicoise.jpg"
+      },
+      {
+        "id": "fraicheur",
+        "n": "Salade fraîcheur",
+        "p": 1200,
+        "img": "/img/fraicheur.jpg"
+      }
+    ]
+  },
+  {
+    "c": "pates",
+    "items": [
+      {
+        "id": "pt_spag",
+        "n": "Spaghettis aux Boulettes",
+        "p": 1600,
+        "img": "/img/pt_spag.jpg"
+      },
+      {
+        "id": "pt_tag",
+        "n": "Tagliatelles au Poulet",
+        "p": 1400,
+        "img": "/img/pt_tag.jpg"
+      },
+      {
+        "id": "pt_penne",
+        "n": "Penne all'arrabbiata",
+        "p": 1200,
+        "img": "/img/pt_penne.jpg"
+      }
+    ]
+  },
+  {
+    "c": "viandes_blanches",
+    "items": [
+      {
+        "id": "cuisse",
+        "n": "Cuisse de poulet grillée",
+        "p": 1400,
+        "img": "/img/cuisse.jpg"
+      },
+      {
+        "id": "parmageina",
+        "n": "Poulet Parmigiana",
+        "p": 1600,
+        "img": "/img/parmageina.jpg"
+      },
+      {
+        "id": "supreme_grille",
+        "n": "Suprême de poulet grillé",
+        "p": 1200,
+        "img": "/img/supreme_grille.jpg"
+      },
+      {
+        "id": "supreme_creme",
+        "n": "Suprême de poulet à la crème",
+        "p": 1400,
+        "img": "/img/supreme_creme.jpg"
+      }
+    ]
+  },
+  {
+    "c": "viandes_rouges",
+    "items": [
+      {
+        "id": "entrecote",
+        "n": "Entrecôte",
+        "p": 2700,
+        "img": "/img/entrecote.jpg"
+      },
+      {
+        "id": "steack",
+        "n": "Steak haché à cheval",
+        "p": 1700,
+        "img": "/img/steack.jpg"
+      },
+      {
+        "id": "filet",
+        "n": "Filet de boeuf",
+        "p": 2900,
+        "img": "/img/filet.jpg"
+      },
+      {
+        "id": "brochettes",
+        "n": "Brochettes Mix",
+        "p": 2000,
+        "img": "/img/brochettes.jpg"
+      }
+    ]
+  },
+  {
+    "c": "poissons",
+    "items": [
+      {
+        "id": "crevettes",
+        "n": "Crevettes royales",
+        "p": 2800,
+        "img": "/img/crevettes.jpg"
+      },
+      {
+        "id": "paella",
+        "n": "Paella aux fruits de mer",
+        "p": 3000,
+        "img": "/img/paella.jpg"
+      },
+      {
+        "id": "dorade",
+        "n": "Dorade",
+        "p": 1700,
+        "img": "/img/dorade.jpg"
+      },
+      {
+        "id": "loup",
+        "n": "Loup de mer",
+        "p": 1700,
+        "img": "/img/loup.jpg"
+      },
+      {
+        "id": "espadon",
+        "n": "Espadon",
+        "p": 2700,
+        "img": "/img/espadon.jpg"
+      }
+    ]
+  },
+  {
+    "c": "burgers",
+    "items": [
+      {
+        "id": "chicken_burger",
+        "n": "Chicken Burger",
+        "p": 1000,
+        "img": "/img/chicken_burger.jpg"
+      },
+      {
+        "id": "fish_burger",
+        "n": "Fish Burger",
+        "p": 1500,
+        "img": "/img/fish_burger.jpg"
+      },
+      {
+        "id": "cheese_burger",
+        "n": "Cheese Burger",
+        "p": 1200,
+        "img": "/img/cheese_burger.jpg"
+      }
+    ]
+  },
+  {
+    "c": "pizzas",
+    "items": [
+      {
+        "id": "pz_crevettes",
+        "n": "Pizza aux Crevettes",
+        "p": 1200,
+        "img": "/img/pz_crevettes.jpg"
+      },
+      {
+        "id": "pz_poulet",
+        "n": "Pizza Mania",
+        "p": 900,
+        "img": "/img/pz_poulet.jpg"
+      },
+      {
+        "id": "pz_saucisse",
+        "n": "Pizza Campione",
+        "p": 900,
+        "img": "/img/pz_saucisse.jpg"
+      },
+      {
+        "id": "pz_thon",
+        "n": "Pizza Tonna e Cipolla",
+        "p": 900,
+        "img": "/img/pz_thon.jpg"
+      },
+      {
+        "id": "pz_anchois",
+        "n": "Pizza Napolitana",
+        "p": 900,
+        "img": "/img/pz_anchois.jpg"
+      },
+      {
+        "id": "pz_vege",
+        "n": "Pizza Végétarienne",
+        "p": 900,
+        "img": "/img/pz_vege.jpg"
+      },
+      {
+        "id": "pz_mozza",
+        "n": "Pizza Margarita",
+        "p": 800,
+        "img": "/img/pz_mozza.jpg"
+      },
+      {
+        "id": "pz_quattro",
+        "n": "Pizza Quattro Formaggi",
+        "p": 1100,
+        "img": "/img/pz_quattro.jpg"
+      }
+    ]
+  },
+  {
+    "c": "gourmandises",
+    "items": [
+      {
+        "id": "gourmandise_piece",
+        "n": "Les Gourmandises (la pièce)",
+        "p": 500,
+        "img": "/img/gourmandises.jpg"
+      }
+    ]
+  },
+  {
+    "c": "glaces",
+    "items": [
+      {
+        "id": "glace_boule",
+        "n": "Les Glaces (la boule)",
+        "p": 300,
+        "img": "/img/glaces.jpg"
+      }
+    ]
+  },
+  {
+    "c": "boissons_fraiches",
+    "items": [
+      {
+        "id": "soda",
+        "n": "Soda (Selecto, Coca, Fanta, Schweppes)",
+        "p": 200,
+        "img": "/img/sodas.jpg"
+      },
+      {
+        "id": "eau_minerale",
+        "n": "Eau minérale PM",
+        "p": 50,
+        "img": "/img/eau_minerale.jpg"
+      },
+      {
+        "id": "jus_orange",
+        "n": "Jus d'orange frais",
+        "p": 400,
+        "img": "/img/jus_orange.jpg"
+      },
+      {
+        "id": "jus_cocktail",
+        "n": "Jus cocktail",
+        "p": 600,
+        "img": "/img/jus_cocktail.jpg"
+      },
+      {
+        "id": "mojito",
+        "n": "Mojito frais",
+        "p": 600,
+        "img": "/img/mojito.jpg"
+      }
+    ]
+  },
+  {
+    "c": "boissons_chaudes",
+    "items": [
+      {
+        "id": "cafe",
+        "n": "Café Espresso (Cafés Richard)",
+        "p": 300,
+        "img": "/img/cafe_espresso.jpg"
+      },
+      {
+        "id": "cappuccino",
+        "n": "Cappuccino (Cafés Richard)",
+        "p": 400,
+        "img": "/img/cappuccino.jpg"
+      }
+    ]
+  }
 ]

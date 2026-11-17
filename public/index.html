@@ -407,41 +407,6 @@
       font-size: 14px;
     }
 
-    /* Promo section */
-    .promo {
-      margin: 44px 0 0;
-      padding: 22px 24px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(201, 160, 99, 0.08) 0%, rgba(20, 18, 14, 0.7) 100%);
-      border: 1px solid var(--line-gold);
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
-    .promo-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .promo-title {
-      font-family: var(--display);
-      font-style: italic;
-      font-size: 19px;
-      color: var(--gold-light);
-    }
-    [dir="rtl"] .promo-title {
-      font-style: normal;
-    }
-    .promo-price {
-      font-size: 13.5px;
-      color: var(--muted);
-      font-weight: 400;
-    }
-
     /* Hero meta links */
     .hero-meta {
       display: flex;
@@ -628,9 +593,6 @@
   <!-- Menu Content -->
   <main id="menu"></main>
 
-  <!-- Sweet Promo -->
-  <div class="promo" id="promo"></div>
-
   <!-- Reviews & Location -->
   <section class="reviews-card" id="reviews-card">
     <div class="reviews-stars">★★★★★</div>
@@ -684,7 +646,11 @@ const L = {
       viandes_rouges: 'Viandes rouges',
       poissons: 'Poissons & Mer',
       burgers: 'Burgers gourmet',
-      pizzas: 'Pizzas artisanales'
+      pizzas: 'Pizzas artisanales',
+      gourmandises: 'Gourmandises & Pâtisseries',
+      glaces: 'Glaces artisanales',
+      boissons_fraiches: 'Boissons fraîches',
+      boissons_chaudes: 'Cafés & Boissons chaudes'
     }
   },
   en: {
@@ -714,7 +680,11 @@ const L = {
       viandes_rouges: 'Red Meats',
       poissons: 'Fish & Seafood',
       burgers: 'Gourmet Burgers',
-      pizzas: 'Artisanal Pizzas'
+      pizzas: 'Artisanal Pizzas',
+      gourmandises: 'Gourmet Pastries',
+      glaces: 'Artisanal Ice Creams',
+      boissons_fraiches: 'Cold Drinks & Cocktails',
+      boissons_chaudes: 'Coffee & Hot Drinks'
     }
   },
   ar: {
@@ -744,7 +714,11 @@ const L = {
       viandes_rouges: 'لحوم حمراء',
       poissons: 'أسماك ومأكولات بحرية',
       burgers: 'برغر فاخر',
-      pizzas: 'بيتزا إيطالية'
+      pizzas: 'بيتزا إيطالية',
+      gourmandises: 'حلويات ومعجنات فاخرة',
+      glaces: 'مثلجات تقليدية',
+      boissons_fraiches: 'مشروبات باردة وعصائر',
+      boissons_chaudes: 'قهوة ومشروبات ساخنة'
     }
   }
 };
@@ -801,19 +775,6 @@ function render() {
   $('reviews-btn-label').textContent = X.reviewsBtn;
   $('reviews-maps-label').textContent = X.reviewsMaps;
 
-  // Promo
-  $('promo').innerHTML = `
-    <div class="promo-item">
-      <span class="promo-title">${esc(X.gl)}</span>
-      <span class="promo-price">${esc(X.glp)}</span>
-    </div>
-    <div style="width:1px;height:36px;background:var(--line-gold);opacity:.5"></div>
-    <div class="promo-item">
-      <span class="promo-title">${esc(X.go)}</span>
-      <span class="promo-price">${esc(X.gop)}</span>
-    </div>
-  `;
-
   // Menu Categories & Dishes
   const qy = query.trim().toLowerCase();
   let h = '', nv = '', any = false;
@@ -831,7 +792,7 @@ function render() {
       its.map((d, i) => `
         <article class="dish">
           <div class="dish-img-wrap">
-            <img src="${d.img}" alt="${esc(d.n)}" ${i > 2 ? 'loading="lazy"' : ''}>
+            <img src="${d.img}?v=2" alt="${esc(d.n)}" ${i > 2 ? 'loading="lazy"' : ''}>
           </div>
           <div class="dish-info">
             <h3>${esc(d.n)}</h3>

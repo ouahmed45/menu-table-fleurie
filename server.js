@@ -38,7 +38,7 @@ http.createServer((req, res) => {
     const ext = path.extname(f);
     res.writeHead(200, {
       'Content-Type': MIME[ext] || 'application/octet-stream',
-      'Cache-Control': ext === '.jpg' || ext === '.png' ? 'public, max-age=604800' : 'no-cache'
+      'Cache-Control': 'no-cache, no-store, must-revalidate'
     });
     res.end(d);
   });
